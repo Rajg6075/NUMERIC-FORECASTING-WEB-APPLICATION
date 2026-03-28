@@ -5,10 +5,11 @@ Initializes FastAPI app, database, and routes.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.db.database import engine, Base, SessionLocal
-from app.models import Game, Result, Admin
+from app.models import Game, Result, Admin, Contact
 from app.services.auth_service import AuthService
 from app.services.result_reset_service import init_result_reset_scheduler, shutdown_result_reset_scheduler
 from app.routes import public_router, admin_router
+from app.routes.contact import router as contact_router
 
 # Create FastAPI app
 app = FastAPI(
@@ -60,6 +61,7 @@ def shutdown_event():
 # Include routers
 app.include_router(public_router)
 app.include_router(admin_router)
+app.include_router(contact_router, prefix="/api", tags=["contacts"])
 
 
 @app.get("/")
