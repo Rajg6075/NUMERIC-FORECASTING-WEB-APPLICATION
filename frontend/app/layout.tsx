@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ToastProvider } from "@/components/ui/Toast";
 import ConditionalContactButton from "@/components/ConditionalContactButton";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <ToastProvider>
             {children}
             <ConditionalContactButton />
+            <Footer />
           </ToastProvider>
         </AuthProvider>
       </body>

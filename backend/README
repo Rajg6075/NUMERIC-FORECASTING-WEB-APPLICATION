@@ -1,7 +1,0 @@
-FOR BACKEND
-PS C:\Users\hp\Desktop\project ALPHA\backend>
-run -- ./venv/Scripts/python -m uvicorn app.main:app --reload
-
-FOR FRONTEND
-PS C:\Users\hp\Desktop\project ALPHA\frontend>
-run -- npm run dev
