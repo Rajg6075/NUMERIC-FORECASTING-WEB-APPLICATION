@@ -11,7 +11,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { adminApi } from '@/services/api';
-import { Loader2, LogOut, Plus, Trash2, RefreshCw, Home, Crown } from 'lucide-react';
+import { Loader2, LogOut, Plus, Trash2, RefreshCw, Home, Crown, Mail } from 'lucide-react';
 
 export default function AdminDashboardPage() {
   const { isLoading: authLoading } = useRequireAuth();
@@ -208,6 +208,10 @@ export default function AdminDashboardPage() {
               <Link href="/" className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 text-gray-300 hover:text-white text-sm">
                 <Home className="w-4 h-4" />
                 <span className="hidden sm:inline">Home</span>
+              </Link>
+              <Link href="/admin/contacts" className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 text-gray-300 hover:text-white text-sm">
+                <Mail className="w-4 h-4" />
+                <span className="hidden sm:inline">Contacts</span>
               </Link>
               <button 
                 onClick={logout}

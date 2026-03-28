@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ToastProvider } from "@/components/ui/Toast";
-import ContactButton from "@/components/ContactButton";
+import ConditionalContactButton from "@/components/ConditionalContactButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +34,7 @@ export default function RootLayout({
         <AuthProvider>
           <ToastProvider>
             {children}
-            <ContactButton />
+            <ConditionalContactButton />
           </ToastProvider>
         </AuthProvider>
       </body>
